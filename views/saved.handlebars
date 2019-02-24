@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <a class="navbar-brand" href="#">Mongo Scraper</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/saved">Saved Articles</a>
+      </li>
+    </ul>
+    <button type="button" class="btn btn-warning" id="scrapeAgain">
+      <a href="/scrapeagain">
+        Scrape New Articles!
+      </a>
+    </button>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Saved Articles</h1>
+    <p class="lead">
+      Your Saved Articles
+    </p>
+  </div>
+</div>
+{{#each saved}}
+<div class="card text-white bg-primary">
+  <div class="card-header">
+    <h5 class="card-title">{{this.title}}</h5>
+    <button type="button" class="btn btn-warning" id="unSaved">
+      <a href="/unsaved">
+        Unsave Article
+      </a>
+    </button>
+    <button type="button" class="btn btn-warning" id="addNote">
+      <a href="/notes">
+        Add a Note!
+      </a>
+    </button>
+  </div>
+  <div class="card-body">
+    <p class="card-text">
+      {{this.note}}
+    </p>
+  </div>
+</div>
+{{/each}}
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

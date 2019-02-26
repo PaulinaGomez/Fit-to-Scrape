@@ -11,6 +11,9 @@ var ArticleSchema = new Schema({
     type: String,
     required: true
   },
+  description: {
+    type: String
+  },
   //columna link de tipo string requerida
   link: {
     type: String,

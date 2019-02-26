@@ -18,6 +18,8 @@
 
 .jumbotron-fluid {
   height: 400px;
+  display: grid;
+  align-content: center;
 }
 
 .nav-link {
@@ -30,10 +32,11 @@
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  display: inline-block;
+  display: block;
   width: 95%;
   margin: auto;
   margin-bottom: 2rem;
+  align-items: center;
 }
 
 .btn-warning {
@@ -41,4 +44,8 @@
 }
 a {
   color: aliceblue;
+}
+
+.btn-warning {
+  font-weight: bold;
 }

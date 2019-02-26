@@ -24,7 +24,9 @@ var ArticleSchema = new Schema({
     type: Boolean,
     default: false
   },
-  //nota que hace referencia a la segunda tabla de notas y se trae el Id de la misma
+  //nota almacena el Object ID de la coleccion note
+  //la propiedad ref liga el object ID con el modal de Note
+  //esta referencia permite que se relacione los articulos con las notas
   note: {
     type: Schema.Types.ObjectId,
     ref: "Note"

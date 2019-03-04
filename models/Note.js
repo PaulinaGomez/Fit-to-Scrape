@@ -5,10 +5,11 @@ var Schema = mongoose.Schema;
 
 //se crea el schema para esta coleccion igual al modelo de la tabla
 var NoteSchema = new Schema({
-  //columna titulo de tipo string requerida
-  title: String,
   //columna body de tipo string requerida
-  body: String
+  note: {
+    type: String,
+    default: "No note saved"
+  }
 });
 
 //se crea la coleccion o modelo

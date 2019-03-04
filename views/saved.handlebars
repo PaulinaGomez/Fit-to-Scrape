@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand" href="#">Mongo Scraper</a>
+  <a class="navbar-brand" href="/home">Mongo Scraper</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -40,8 +40,10 @@
       </a>
     </button>
 
-    <button type="button" class="btn btn-warning" id="myBtn">
+    <button type="button" class="btn btn-warning" id="openNotes" idDB={{this._id}}>
+
       Add a Note!
+
     </button>
 
   </div>
@@ -53,6 +55,8 @@
 </div>
 {{/each}}
 
+
+
 <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
@@ -60,17 +64,21 @@
     <span class="close">&times;</span>
     <h1>Saved Notes</h1>
     <br>
-    <div>No Saved Notes</div>
+
+    <div class="savedNotes">{{this.note}}</div>
+
     <br>
     <h1>Add a new note to this article. . . </h1>
     <br>
     <input class="userText" type="text" placeholder="Enter Note" name="userText">
     <br>
-    <button type="button" class="btn btn-warning iAddNote" id="myBtn">
+    <button type="button" class="btn btn-warning iAddNote">
       Save Note!
     </button>
+
   </div>
 </div>
+
 
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

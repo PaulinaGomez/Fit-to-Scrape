@@ -44,12 +44,26 @@ module.exports = function(app) {
       });
   });
 
+  //funcion para traer el id del articulo y las notas relacionadas
+  app.get("/note/:id", function(req, res) {
+    db.Article.findOne({ _id: req.params.id })
+      .populate("note")
+      .then(function(dbArticle) {
+        res.json(dbArticle, {
+          notes: allNotes
+        });
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
   //funcion para traer agregar una nota
   //encuentra el articulo usando req.params.id,
   //corre el metodo populate con la coleccion de note
   //responde con el articulo con la nota agregada
   app.post("/note/:id", function(req, res) {
-    db.Note.create(req.body).then(function(dbNote) {
+    db.Note.create(req.note).then(function(dbNote) {
       return db.Article.findOneAndUpdate(
         { _id: req.params.id },
         { note: dbNote._id },
@@ -57,7 +71,9 @@ module.exports = function(app) {
       )
         .populate("note")
         .then(function(dbArticle) {
-          res.json(dbArticle);
+          res.json(dbArticle, {
+            notes: allNotes
+          });
         })
         .catch(function(err) {
           res.json(err);

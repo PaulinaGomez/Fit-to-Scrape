@@ -106,7 +106,11 @@ $(document).ready(function() {
   });
 });
 
+/*
 $(document).on("click", "#openNotes", function() {
   event.preventDefault();
+  debbuger;
   $(".iAddNote").attr($("#openNotes").attr("idDB"));
+  modal.style.display = "block";
 });
+*/
